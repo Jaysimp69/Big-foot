@@ -1,0 +1,9 @@
+game = int(input("What is n?:\n"))
+n= 5
+attempts = 0
+while game != n and attempts < 5:
+    attempts = attempts + 1
+    total_attempts = 6
+    remaining_attempts = total_attempts - attempts
+    print(f'Wrong Answer. You have {remaining_attempts} attempts left.\n')
+    guess = int(input("guess again:\n"))
