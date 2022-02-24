@@ -32,37 +32,25 @@ def pick_a_number():
             largest = number2
         #start guesses
       
-            guess= int(input(f'Im thinking of a number between {least} and {largest} ...What is it?\n'))
-            n= random.randint(number1,number2)
-                print
-                if guess < n:
-                    print ("your number is too low\n")
-                    # guess = int(input("guess again:\n"))
-                    guess_attempts(guess)
-                elif guess > n:
-                    print ("you number is too high\n")
-                    # guess = int(input("guess again:\n"))
-                    guess_attempts(guess)
-                else:
-                    print ("You guessed it!")
-                    ans= input("Do you want to play again?\n")
-                    if ans == 'yes':
-                       return pick_a_number()
-                    if ans == 'no':
-                        print('Bye')
-                # def guess_attempts(game):
-                #     global attempts
-                #     while game != n and attempts < 5:
-                #         attempts = attempts + 1
-                #         total_attempts = 6
-                #         remaining_attempts = total_attempts - attempts
-                #         # print(f'Incorrect password. You have {remaining_attempts} attempts left.')
-                #         guess = int(input("guess again:\n"))
-                         
-        
-                
+        guess= int(input(f'Im thinking of a number between {least} and {largest} ...What is it?\n'))
+        n= random.randint(least,largest)
+        while n != "guess":
+            print
+            if guess < n:
+                print ("your number is too low ")
+                guess = int(input("guess again:\n"))
 
-
+            elif guess > n:
+                print ("you number is too high\n")
+                guess = int(input("guess again:\n"))
+            
+            else:
+                print (f"You guessed it!")
+                ans= input("Do you want to play again?\n")
+                if ans == 'yes':
+                    return pick_a_number()
+                if ans == 'no':
+                    print("bye")
 
 #try this game
 def sore_loser():
@@ -73,4 +61,6 @@ def sore_loser():
     print('Sike, Lets Play')
     time.sleep(1)
     pick_a_number()
-        
+
+#random is the name of the game
+game= play_a_game(input)
